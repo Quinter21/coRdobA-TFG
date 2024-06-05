@@ -1,0 +1,37 @@
+Todo lo que no es AR:
+    Usuario: lista de monumentos, registro, iniciar sesion
+    Admin: usuarios crear, eliminar, modificar y mostrar, crear monumentos etc
+
+VERSIÓN 2
+    Se fusionan los códigos pero AR no funciona
+
+VERSION 3
+    Se organiza el código en carpetas, habría que organizar mejor
+    Consigo que funcione la cámara y el mapa en la app
+
+VERSION 4
+    Aparecen los marcadores al pulsar la pantalla
+    Faltaria que aparecieran al comenzar
+
+VERSION 5
+    Ya aparecen
+
+VERSION 6
+    Ya se ven las rutas en el mapa, no se si en la camara tambien
+    Toca hacer que se pueda alternar entre mapa y camara y comprobar que se vean las rutas con la camara
+
+VERSION 7
+    Todavia no se ven los puntos en el mapa, se está retocando
+    Por ahora se deja mitad mitad en mapa y camara, seguramente al final se elimine el mapa por completo
+
+VERSION 8
+    Ya se veeeee, se ven 2, cada vez que te acercas al primero desaparece y aparece el siguiente
+    Falta gestionar el final, lo mejor sería que al llegar al ultimo apareciera la info del lugar pero jas.
+
+VERSION 9
+    Por ahora se ven 2, se ha arreglado que antes no se veian en un circuito largo, creo que voy a poner solo uno y que cuando llegue al final cambie a mirar el QR para mostrar la info.
+    Al final creo que lo mejor va a ser que haya una pagina con los monumentos y se seleccione a cual quieres ir
+
+VERSION 10
+    Se siguen viendo 2 marcadores, todavia no pasa nada al llegar al último
+    Ahora en la lista de los monumentos de usuario se ven  todos, al pulsar en uno se lanza maps con la ruta a este lugar

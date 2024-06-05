@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "149459037209",
+    "project_id": "pruebas-1fbbd",
+    "storage_bucket": "pruebas-1fbbd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:149459037209:android:1cb367723d8c1347dd8e88",
+        "android_client_info": {
+          "package_name": "com.example.coRdobA"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxcO9QchJNVqihVgE3J8_DfNBDw1EcOao"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".create.CreateUser">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/createNIL">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:id="@+id/createNET"
+                    android:layout_marginTop="30dp"
+                    android:padding="8dp"
+                    android:hint="@string/CreateUsername"
+                    android:drawablePadding="8dp"
+                    android:background="@drawable/edit_text_rectangle"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/createMIL">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:id="@+id/createMET"
+                    android:layout_marginTop="20dp"
+                    android:inputType="textEmailAddress"
+                    android:padding="8dp"
+                    android:hint="@string/CreateUserMail"
+                    android:drawablePadding="8dp"
+                    android:background="@drawable/edit_text_rectangle"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true"
+                android:id="@+id/createPIL">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/createPET"
+                android:inputType="textPassword"
+                android:padding="8dp"
+                android:hint="@string/CreatePassword"
+                android:background="@drawable/edit_text_rectangle"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true"
+                android:id="@+id/createCPIL">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:id="@+id/createCPET"
+                    android:inputType="textPassword"
+                    android:hint="@string/CreateConfirmPassword"
+                    android:drawablePadding="8dp"
+                    android:background="@drawable/edit_text_rectangle"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <CheckBox
+                android:id="@+id/isadmin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Admin"
+                android:textSize="18sp"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/createButton"
+                android:text="@string/CreateButton"
+                android:textSize="20sp"
+                app:cornerRadius="20dp">
+
+            </Button>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

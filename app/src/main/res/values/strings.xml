@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">coRdobA</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="geospatial_pose" translatable="false">LAT/LNG: %.6f˚, %.6f˚\n\t\t\tACCURACY: %.2fm\nALTITUDE: %.2fm\n\t\t\tACCURACY: %.2fm\nHEADING: %.1f˚\n\t\t\tACCURACY: %.1f˚</string>
+    <string name="earth_state">EarthState: %1$s\nTrackingState: %2$s\n%3$s</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="SpecMonumentName">MonumentName</string>
+    <string name="SpecMonumentDescription">Monument Description</string>
+    <string name="CreateMonumentName">Monument name</string>
+    <string name="CreateMonumetDescription">Monument information</string>
+    <string name="CreateButton">Create</string>
+    <string name="CreateUsername">Username</string>
+    <string name="CreateUserMail">Email</string>
+    <string name="CreatePassword">Password</string>
+    <string name="CreateConfirmPassword">Confirm Password</string>
+    <string name="Admin">Is admin?</string>
+    <string name="registerButton">Register</string>
+    <string name="UserButton">Users</string>
+    <string name="monumentsButton">Monuments</string>
+    <string name="EditMonumentMenu">Edit monument</string>
+    <string name="DeleteButton">Delete</string>
+    <string name="edit_user">Edit User</string>
+    <string name="Loading">Not loaded yet</string>
+    <string name="loginButton">LOGIN</string>
+    <string name="cameraButton">Camera</string>
+    <string name="search_here">Search here ....</string>
+    <string name="CreateMonumentTime">Time - days open</string>
+    <string name="change_view">Change view</string>
+    <string name="log_out">Log out</string>
+    <string name="main_menu">Main menu</string>
+    <string name="upload_imgage">Upload imgage</string>
+    <string name="download_qr">Download QR</string>
+    <string name="return_to_ini">Return</string>
+</resources>

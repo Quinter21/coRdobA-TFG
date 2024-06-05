@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminMain"
+    android:orientation="vertical"
+    android:weightSum="2">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/userImg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/user_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/usersButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/UserButton"
+            android:background="@color/zxing_transparent"
+            android:textSize="50dp"
+            app:layout_constraintBottom_toBottomOf="@id/userImg"
+            app:layout_constraintEnd_toEndOf="@id/userImg"
+            app:layout_constraintStart_toStartOf="@id/userImg"
+            app:layout_constraintTop_toTopOf="@id/userImg" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/monuImg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/monu_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/monumentsButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/monumentsButton"
+            android:background="@color/zxing_transparent"
+            android:textSize="50dp"
+            app:layout_constraintBottom_toBottomOf="@id/monuImg"
+            app:layout_constraintEnd_toEndOf="@id/monuImg"
+            app:layout_constraintStart_toStartOf="@id/monuImg"
+            app:layout_constraintTop_toTopOf="@id/monuImg" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

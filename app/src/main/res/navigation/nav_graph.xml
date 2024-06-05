@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/login">
+    <fragment
+        android:id="@+id/login"
+        android:name="com.example.coRdobA.Login"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_to_register"
+            app:destination="@id/register" />
+        <action
+            android:id="@+id/action_login_to_adminMain"
+            app:destination="@id/adminMain" />
+        <action
+            android:id="@+id/action_login_to_userListOfMonumets"
+            app:destination="@id/userListOfMonumets" />
+    </fragment>
+    <activity
+        android:id="@+id/register"
+        android:name="com.example.coRdobA.create.Register"
+        android:label="activity_register"
+        tools:layout="@layout/activity_register" />
+    <fragment
+        android:id="@+id/adminMain"
+        android:name="com.example.coRdobA.AdminMain"
+        android:label="fragment_admin_main"
+        tools:layout="@layout/fragment_admin_main" >
+        <action
+            android:id="@+id/action_adminMain_to_login"
+            app:destination="@id/login" />
+        <action
+            android:id="@+id/action_adminMain_to_listOfUsers"
+            app:destination="@id/listOfUsers" />
+        <action
+            android:id="@+id/action_adminMain_to_listOfMonuments"
+            app:destination="@id/listOfMonuments" />
+        <action
+            android:id="@+id/action_adminMain_to_userListOfMonumets"
+            app:destination="@id/userListOfMonumets" />
+    </fragment>
+    <fragment
+        android:id="@+id/listOfUsers"
+        android:name="com.example.coRdobA.ListOfUsers"
+        android:label="fragment_list_of_users"
+        tools:layout="@layout/fragment_list_of_users" >
+        <action
+            android:id="@+id/action_listOfUsers_to_adminMain"
+            app:destination="@id/adminMain" />
+        <action
+            android:id="@+id/action_listOfUsers_to_editUser"
+            app:destination="@id/editUser"/>
+        <action
+            android:id="@+id/action_listOfUsers_to_createUser"
+            app:destination="@id/createUser" />
+        <action
+            android:id="@+id/action_listOfUsers_to_userListOfMonumets"
+            app:destination="@id/userListOfMonumets" />
+        <action
+            android:id="@+id/action_listOfUsers_to_login"
+            app:destination="@id/login" />
+    </fragment>
+    <fragment
+        android:id="@+id/editUser"
+        android:name="com.example.coRdobA.create.EditUser"
+        android:label="fragment_edit_user"
+        tools:layout="@layout/fragment_edit_user" >
+        <argument
+            android:name="uid"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_editUser_to_listOfUsers"
+            app:destination="@id/listOfUsers" />
+    </fragment>
+    <activity
+        android:id="@+id/createUser"
+        android:name="com.example.coRdobA.create.CreateUser"
+        android:label="activity_create_user"
+        tools:layout="@layout/activity_create_user" />
+    <fragment
+        android:id="@+id/listOfMonuments"
+        android:name="com.example.coRdobA.ListOfMonuments"
+        android:label="ListOfMonuments"
+        tools:layout="@layout/fragment_list_of_monuments">
+        <action
+            android:id="@+id/action_listOfMonuments_to_editMonument"
+            app:destination="@id/editMonument" />
+        <action
+            android:id="@+id/action_listOfMonuments_to_createMonument"
+            app:destination="@id/createMonument" />
+        <action
+            android:id="@+id/action_listOfMonuments_to_adminMain"
+            app:destination="@id/adminMain" />
+        <action
+            android:id="@+id/action_listOfMonuments_to_userListOfMonumets"
+            app:destination="@id/userListOfMonumets" />
+        <action
+            android:id="@+id/action_listOfMonuments_to_login"
+            app:destination="@id/login" />
+    </fragment>
+    <fragment
+        android:id="@+id/editMonument"
+        android:name="com.example.coRdobA.create.EditMonument"
+        android:label="EditMonument"
+        tools:layout="@layout/fragment_edit_monument">
+        <argument
+            android:name="mid"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_editMonument_to_listOfMonuments"
+            app:destination="@id/listOfMonuments" />
+    </fragment>
+    <activity
+        android:id="@+id/createMonument"
+        android:name="com.example.coRdobA.create.CreateMonument"
+        android:label="activity_create_monument"
+        tools:layout="@layout/activity_create_monument" />
+    <fragment
+        android:id="@+id/userListOfMonumets"
+        android:name="com.example.coRdobA.UserListOfMonumets"
+        android:label="fragment_user_list_of_monumets"
+        tools:layout="@layout/fragment_user_list_of_monumets" >
+        <action
+            android:id="@+id/action_userListOfMonumets_to_geoActivity"
+            app:destination="@id/geoActivity" />
+        <action
+            android:id="@+id/action_userListOfMonumets_to_adminMain"
+            app:destination="@id/adminMain" />
+        <action
+            android:id="@+id/action_userListOfMonumets_to_login"
+            app:destination="@id/login" />
+        <action
+            android:id="@+id/action_userListOfMonumets_to_aux2"
+            app:destination="@id/aux2" />
+        <action
+            android:id="@+id/action_userListOfMonumets_to_login2"
+            app:destination="@id/login" />
+    </fragment>
+    <activity
+        android:id="@+id/geoActivity"
+        android:name="com.example.coRdobA.GeoActivity"
+        android:label="activity_geo"
+        tools:layout="@layout/activity_geo" >
+        <argument
+            android:name="mid"
+            app:argType="string"
+            app:nullable="true" />
+    </activity>
+    <activity
+        android:id="@+id/aux2"
+        android:name="com.example.coRdobA.QRscan"
+        android:label="activity_aux2"
+        tools:layout="@layout/activity_aux2" />
+    <fragment
+        android:id="@+id/infoMonument"
+        android:name="com.example.coRdobA.InfoMonument"
+        android:label="fragment_info_monument"
+        tools:layout="@layout/fragment_info_monument" >
+        <action
+            android:id="@+id/action_infoMonument_to_userListOfMonumets"
+            app:destination="@id/userListOfMonumets" />
+    </fragment>
+</navigation>
