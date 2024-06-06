@@ -94,42 +94,47 @@ class EditMonument : Fragment() {
         }
 
         binding.QRButton.setOnClickListener {
-            val data = args.mid!!
-            val writer = QRCodeWriter()
-            try {
-                //Create QR
-                val bitMatrix = writer.encode(data, BarcodeFormat.QR_CODE, 512, 512)
-                val bmp = Bitmap.createBitmap(512, 512, Bitmap.Config.RGB_565)
-                for (x in 0 until 512)
-                    for (y in 0 until 512){
-                        bmp.setPixel(x, y, if(bitMatrix[x,y]) Color.BLACK else Color.WHITE)
-                    }
-                val contentValues = ContentValues().apply {
-                    put(MediaStore.MediaColumns.DISPLAY_NAME, monument.name+"_QR.jpg")
-                    put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg")
-                    put(MediaStore.MediaColumns.RELATIVE_PATH, "DCIM/Pruebas")
-                }
+            downloadQR()
+        }
 
-                val resolver = requireContext().contentResolver
-                val uri = resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues)
-                if(uri != null){
-                    var outputStream: OutputStream? = null
-                    try {
-                        outputStream = resolver.openOutputStream(uri)
-                        if (outputStream != null){
-                            bmp.compress(Bitmap.CompressFormat.JPEG, 100, outputStream)
-                        }
-                    } catch (e : IOException){
-                        e.printStackTrace()
-                    } finally {
-                        outputStream?.close()
-                        Toast.makeText(this.context, "QR generated", Toast.LENGTH_SHORT).show()
-                    }
-                }
+    }
 
-            }catch (e: WriterException){
-                e.printStackTrace()
+    private fun downloadQR() {
+        val data = args.mid!!
+        val writer = QRCodeWriter()
+        try {
+            //Create QR
+            val bitMatrix = writer.encode(data, BarcodeFormat.QR_CODE, 512, 512)
+            val bmp = Bitmap.createBitmap(512, 512, Bitmap.Config.RGB_565)
+            for (x in 0 until 512)
+                for (y in 0 until 512) {
+                    bmp.setPixel(x, y, if (bitMatrix[x, y]) Color.BLACK else Color.WHITE)
+                }
+            val contentValues = ContentValues().apply {
+                put(MediaStore.MediaColumns.DISPLAY_NAME, monument.name + "_QR.jpg")
+                put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg")
+                put(MediaStore.MediaColumns.RELATIVE_PATH, "DCIM/Pruebas")
             }
+
+            val resolver = requireContext().contentResolver
+            val uri = resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues)
+            if (uri != null) {
+                var outputStream: OutputStream? = null
+                try {
+                    outputStream = resolver.openOutputStream(uri)
+                    if (outputStream != null) {
+                        bmp.compress(Bitmap.CompressFormat.JPEG, 100, outputStream)
+                    }
+                } catch (e: IOException) {
+                    e.printStackTrace()
+                } finally {
+                    outputStream?.close()
+                    Toast.makeText(this.context, "QR generated", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+        } catch (e: WriterException) {
+            e.printStackTrace()
         }
     }
 
