@@ -2,15 +2,12 @@ package com.example.coRdobA
 
 import android.content.Intent
 import android.opengl.Matrix
-import android.os.Handler
-import android.os.Looper
 import android.util.Log
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import com.example.coRdobA.common.helpers.DisplayRotationHelper
 import com.example.coRdobA.common.helpers.TrackingStateHelper
 import com.example.coRdobA.common.render.*
-import com.example.coRdobA.data.Monument
 import com.google.android.gms.maps.model.LatLng
 import com.google.ar.core.Anchor
 import com.google.ar.core.TrackingState
@@ -18,7 +15,6 @@ import com.google.ar.core.exceptions.CameraNotAvailableException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.toObject
 import com.google.firebase.ktx.Firebase
 import java.io.IOException
 
@@ -44,8 +40,6 @@ class GeoRenderer(val activity: GeoActivity) :
     // Position and information of monuments
     lateinit var fStore: FirebaseFirestore
     lateinit var fAuth: FirebaseAuth
-    val listOfUbications: ArrayList<LatLng> = arrayListOf()
-    val monuments: ArrayList<Monument> = arrayListOf()
 
     // Temporary matrix allocated here to reduce number of allocations for each frame.
     val modelMatrix = FloatArray(16)
@@ -71,8 +65,8 @@ class GeoRenderer(val activity: GeoActivity) :
         fAuth = Firebase.auth
         fStore = FirebaseFirestore.getInstance()
 
-        getUnlockedMonuments()
-        delayFun()
+        //getUnlockedMonuments()
+        //delayFun()
     }
 
     override fun onResume(owner: LifecycleOwner) {
@@ -100,7 +94,7 @@ class GeoRenderer(val activity: GeoActivity) :
                     Texture.ColorFormat.SRGB
                 )
 
-            virtualObjectMesh = Mesh.createFromAsset(render, "models/geospatial_marker.obj");
+            virtualObjectMesh = Mesh.createFromAsset(render, "models/geospatial_marker.obj")
             virtualObjectShader =
                 Shader.createFromAssets(
                     render,
@@ -228,7 +222,7 @@ class GeoRenderer(val activity: GeoActivity) :
     private fun showError(errorMessage: String) =
         activity.view.snackbarHelper.showError(activity, errorMessage)
 
-    private fun getUnlockedMonuments() {
+    /*private fun getUnlockedMonuments() {
         var unlockedList: List<String> = emptyList()
 
         fStore.collection("Users").document(fAuth.currentUser!!.uid).get()
@@ -247,9 +241,9 @@ class GeoRenderer(val activity: GeoActivity) :
             Log.d("Unlocked Monuments", "Monuments: " + monuments.toString())
         }
 
-    }
+    }*/
 
-    private fun getPositionOfMonuments() {
+    /*private fun getPositionOfMonuments() {
         Log.d("Position Monuments", "Getting positions")
         for (monument in monuments) {
             //Log.d("Position Monuments", monument.coordinates.toString())
@@ -268,7 +262,7 @@ class GeoRenderer(val activity: GeoActivity) :
         }
         val handler: Handler = Handler(Looper.getMainLooper())
         handler.postDelayed(run, 3000)
-    }
+    }*/
 
     private fun clearAnchors(){
         anchors.forEach { it.detach() }
